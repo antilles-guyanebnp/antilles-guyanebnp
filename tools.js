@@ -33,7 +33,7 @@ function setselect(ele,val)
 }
 
 /*
- * Retourne la valeur de l'option de la combo selectionnÃ©e
+ * Retourne la valeur de l'option de la combo selectionnée
  */
 function getselect( ele )
 {
@@ -59,7 +59,7 @@ function setradio(ele,val)
 }
 
 /*
- * Recuperation de la valeur du bouton radio selectionnÃ©
+ * Recuperation de la valeur du bouton radio selectionné
  */
 function getradio(ele, defaut)
 {
@@ -148,7 +148,7 @@ function ZeroDevant(zone,longueur)
 
 /*
  * CheckRIBAlert( CBanque,CGuichet,CNumCompte,CleRIB)
- * Controle la clÃ© RIB et envoi un message d'erreur et redonne le focus sur la zone
+ * Controle la clé RIB et envoi un message d'erreur et redonne le focus sur la zone
  */
 function CheckRIBAlert(CBanque,CGuichet,CNumCompte,CleRIB)
 {
@@ -170,14 +170,14 @@ function CheckRIBAlert(CBanque,CGuichet,CNumCompte,CleRIB)
 
   if ( CNumCompte.value == "" )
   {
-	alert("La saisie du numÃ©ro de compte est obligatoire");
+	alert("La saisie du numéro de compte est obligatoire");
 	CNumCompte.focus();
 	return false;
   }
 
   if ( CleRIB.value == "" )
   {
-	alert("La saisie de la clÃ© RIB est obligatoire.");
+	alert("La saisie de la clé RIB est obligatoire.");
 	CleRIB.focus();
 	return false;
   }
@@ -195,7 +195,7 @@ function CheckRIBAlert(CBanque,CGuichet,CNumCompte,CleRIB)
 
 /*
  * CheckRIB(CBanque,CGuichet,CNumCompte,CleRIB)
- * Controle la clÃ© RIB
+ * Controle la clé RIB
  */
 function CheckRIB(CBanque,CGuichet,CNumCompte,CleRIB)
 {
@@ -258,20 +258,20 @@ function CheckRIB(CBanque,CGuichet,CNumCompte,CleRIB)
   x = 100 + ( 96 - PN3 );
   x = x +"";                  // Forcer la variable en String
   if (x.substr(x.length - 2,2) != CleRIB )
-	return " Votre numÃ©ro de compte est incorrect par rapport au calcul de la clÃ© RIB. ";
+	return " Votre numéro de compte est incorrect par rapport au calcul de la clé RIB. ";
   else
 	return "";
 }
 
 /*
  * CheckAFB(str)
- * Controle si la chaine de caractere est acceptÃ©e en AFB et envoi un message d'erreur et redonne le focus sur la zone
+ * Controle si la chaine de caractere est acceptée en AFB et envoi un message d'erreur et redonne le focus sur la zone
  */
 function CheckAFB(str)
 {
   var caractere;
   var lstAFB = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ \"-./)(";
-  var message = "Les caractÃ¨res suivants :\n %1\n ne sont pas autorisÃ©s dans cette zone";
+  var message = "Les caractères suivants :\n %1\n ne sont pas autorisés dans cette zone";
   var n = "";
   
   for(i = 0; i < str.length; i++)
@@ -290,7 +290,7 @@ function CheckAFB(str)
 
 /*
  * CheckAFBAlert(ele)
- * Controle si la chaine de caractere est acceptÃ©e en AFB
+ * Controle si la chaine de caractere est acceptée en AFB
  */
 function CheckAFBAlert(zone)
 {
@@ -330,7 +330,7 @@ var arr, dec, val, sep;
 function CheckAmount( ele, strMax, strDev, isNull, isFull, isDec, nbDec )
 {
   var arr,mil,nb,sep,hlp;
-  hlp ="Le format du montant est le suivant :\n- Le sÃ©parateur des milliers est un espace\n- Le sÃ©parateur des dÃ©cimales est ','\n\nL'erreur suivante a Ã©tÃ© trouvÃ©e\n";
+  hlp ="Le format du montant est le suivant :\n- Le séparateur des milliers est un espace\n- Le séparateur des décimales est ','\n\nL'erreur suivante a été trouvée\n";
   if ( strDev == null ) strDev = "";
   if ( isNull == null ) isNull = false;
   if ( isFull == null ) isFull = false;
@@ -338,11 +338,11 @@ function CheckAmount( ele, strMax, strDev, isNull, isFull, isDec, nbDec )
   if ( nbDec == null ) nbDec = 999;
   
   if ( !isNull && ReadAmount(ele.value) == 0 )
-    return "Le montant ne doit pas Ãªtre nul";
+    return "Le montant ne doit pas être nul";
   
   /*
     Si le separateur de millier est different du point ou de la virgule, et que l'internaute a saisie en separateur de 
-    deimal l'un de ces deux caracteres Ã  la place de l'autre, alors on remplace le separateur de decimal par celui attendu 
+    deimal l'un de ces deux caracteres à la place de l'autre, alors on remplace le separateur de decimal par celui attendu 
     par le WEB
   */
   if ( "" != "." && "" != ",")
@@ -363,10 +363,10 @@ function CheckAmount( ele, strMax, strDev, isNull, isFull, isDec, nbDec )
         if(i==0)
         {
           if(ele.value.charAt(i)!="-" && ele.value.charAt(i)!="+" )
-            return hlp+"Format non numÃ©rique" + "\n\n( " + ele.value + " )";
+            return hlp+"Format non numérique" + "\n\n( " + ele.value + " )";
         }
         else
-          return hlp+"Format non numÃ©rique" + "\n\n( " + ele.value + " )";
+          return hlp+"Format non numérique" + "\n\n( " + ele.value + " )";
       }
     }
   }
@@ -374,23 +374,23 @@ function CheckAmount( ele, strMax, strDev, isNull, isFull, isDec, nbDec )
   // Decimales
   arr = ele.value.split(",");
   if ( arr.length > 2 )
-    return hlp+"SÃ©parateur dÃ©cimal incorrect" + "\n\n( " + ele.value + " )";
+    return hlp+"Séparateur décimal incorrect" + "\n\n( " + ele.value + " )";
   if ( arr.length == 2 )
   {
     nb = strDev.substring(3,4);
     if ( nb != "" )
     {
-      if ( nb == 0 ) return "Devise sans dÃ©cimale";
-      if ( arr[1].length > nb ) return "Nombre de dÃ©cimales incorrect";
+      if ( nb == 0 ) return "Devise sans décimale";
+      if ( arr[1].length > nb ) return "Nombre de décimales incorrect";
     }
-    if ( parseInt(arr[1], 10) != arr[1] ) return hlp+"Format non numÃ©rique" + "\n\n( " + ele.value + " )";
+    if ( parseInt(arr[1], 10) != arr[1] ) return hlp+"Format non numérique" + "\n\n( " + ele.value + " )";
   }
   
   //Controle sur le nombre de digit contenu dans les decimales et la partie entiere
   if(!isFull && parseInt(arr[0], 10)>9999999999999)
-    return "La partie entiere du montant ne doit pas etre superieur Ã  9999999999999";
+    return "La partie entiere du montant ne doit pas etre superieur à 9999999999999";
   if( !isDec && parseInt(arr[1], 10)> nbDec)
-    return TextFormat("Un montant ne peut avoir plus de %1 dÃ©cimales", String(nbDec).length);
+    return TextFormat("Un montant ne peut avoir plus de %1 décimales", String(nbDec).length);
   
   // Separateur Milliers
   sep = "";
@@ -400,12 +400,12 @@ function CheckAmount( ele, strMax, strDev, isNull, isFull, isDec, nbDec )
   {
     for ( i = 0; i < mil.length; i++ )
     {
-      if ( ( i > 0 && mil[i].length != 3 ) || ( i== 0 && mil[i].length > 3  && mil[i].substring(0,1)!="-" && mil[i].substring(0,1)!="+"  ) ) return hlp+"SÃ©parateur des milliers incorrect\n\n( "+ ele.value + " )";
-      if (mil[i]!="-" && mil[i]!="+" && parseInt(mil[i], 10) != mil[i] ) return hlp+"Format non numÃ©rique" + "\n\n( " + ele.value + " )";
+      if ( ( i > 0 && mil[i].length != 3 ) || ( i== 0 && mil[i].length > 3  && mil[i].substring(0,1)!="-" && mil[i].substring(0,1)!="+"  ) ) return hlp+"Séparateur des milliers incorrect\n\n( "+ ele.value + " )";
+      if (mil[i]!="-" && mil[i]!="+" && parseInt(mil[i], 10) != mil[i] ) return hlp+"Format non numérique" + "\n\n( " + ele.value + " )";
     }
   }
   else
-    if ( parseInt(mil[0], 10) != mil[0] ) return hlp+"Format non numÃ©rique" + "\n\n( " + ele.value + " )";
+    if ( parseInt(mil[0], 10) != mil[0] ) return hlp+"Format non numérique" + "\n\n( " + ele.value + " )";
   
   // Gestion des bornes
   if ( strMax != "" )
@@ -415,27 +415,27 @@ function CheckAmount( ele, strMax, strDev, isNull, isFull, isDec, nbDec )
     if ( max == 0 )
     {
       if ( fval < 0 )
-        return "Le montant ne peut pas Ãªtre nÃ©gatif\n\n( " + ele.value +" )";
+        return "Le montant ne peut pas être négatif\n\n( " + ele.value +" )";
       return "";
     }
     if ( max > 0 ) min = 0; else { min = max; max = 0; }
     if ( fval <= min || fval >= max )
-      return "Le nombre n'est pas dans l'intervalle" + " [" + min + " Ã  " + max + "]\n\n( " + ele.value +" )";
+      return "Le nombre n'est pas dans l'intervalle" + " [" + min + " à " + max + "]\n\n( " + ele.value +" )";
   }
   return "";
 }
 
 /*
   CheckAmountAlert( ele, strMax, obl, strDev, isNull, isFull, isDec, nbDec )
-  Test de la validitÃ© d'un montant
+  Test de la validité d'un montant
   ele.value   la chaine saisie
   strMax      Min/Max de controle
   obl         autorise les saisies vides
   strDev      La devise avec Nb de decimales (EUR3 par exemple)
-  isNull      Permet la saisie d'un montant Ã  zÃ©ro 
+  isNull      Permet la saisie d'un montant à zéro 
   isFull      Permet la saisie de 15 digit pour la partie entiere
   isDec       Permet de ne pas tester la longueur de la partie des decimales
-  nbDec       Permet de prÃ©ciser le nombre de dÃ©cimales
+  nbDec       Permet de préciser le nombre de décimales
   retourne une chaine, ou un boolean avec Alert()
 */
 function CheckAmountAlert( ele, strMax, obl, strDev, isNull, isFull, isDec, nbDec )
@@ -484,7 +484,7 @@ function CheckAmountAlertForHtml5(ele, strMax, eleHtml5, strDev, isNull, isFull,
 
 /*
   CheckNumber( ele, obl )
-	Test de la validitÃ© d'un nombre
+	Test de la validité d'un nombre
 	ele.value   la chaine saisie
 	obl         autorise les saisies vides
 	
@@ -526,7 +526,7 @@ var start, end;
 	  end = ReadAmount( eleEnd.value );
 	  if ( start > end )
 	  {
-		if ( AffMess ) alert("Le montant minimum est plus grand ou Ã©gal au montant maximum.");
+		if ( AffMess ) alert("Le montant minimum est plus grand ou égal au montant maximum.");
 		eleStart.focus();
 		return false;
 	  }
@@ -600,7 +600,7 @@ function CheckDate( ele, strDelay, obl, nowOk )
     an = 1900 + parseInt(an, 10);
   
   if ( an < 1500 || an > 2500 )
-    return "AnnÃ©e incorrecte" + "\n\n( " + ele.value +" )";
+    return "Année incorrecte" + "\n\n( " + ele.value +" )";
   
   dele = new Date(an, mo-1, jj, 00, 00, 00);
   /*
@@ -623,13 +623,13 @@ function CheckDate( ele, strDelay, obl, nowOk )
     
     if ( parseInt(strDelay, 10) >= 0 ) {
       dmax.setDate( dmax.getDate() + parseInt(strDelay, 10) );
-      msgmin = (nowOk)?"La date doit Ãªtre supÃ©rieure ou Ã©gale Ã  la date du jour":"La date doit Ãªtre supÃ©rieure Ã  la date du jour";
-      msgmax = "La date doit Ãªtre dans la pÃ©riode autorisÃ©e" + " (" + strDelay +")";
+      msgmin = (nowOk)?"La date doit être supérieure ou égale à la date du jour":"La date doit être supérieure à la date du jour";
+      msgmax = "La date doit être dans la période autorisée" + " (" + strDelay +")";
     }
     else {
       dmin.setDate( dmin.getDate() + parseInt(strDelay, 10) );
-      msgmin = "La date doit Ãªtre dans la pÃ©riode autorisÃ©e" + " (" + strDelay +")";
-      msgmax = (nowOk)?"La date doit Ãªtre infÃ©rieure ou Ã©gale Ã  la date du jour":"La date doit Ãªtre infÃ©rieure Ã  la date du jour";
+      msgmin = "La date doit être dans la période autorisée" + " (" + strDelay +")";
+      msgmax = (nowOk)?"La date doit être inférieure ou égale à la date du jour":"La date doit être inférieure à la date du jour";
     }
     
     if ( !nowOk && dnow.toString() == dele.toString() )
@@ -653,7 +653,7 @@ function CheckDate( ele, strDelay, obl, nowOk )
     return "Le format de la date est incorrect\n\nMois incorrect : " + mo + "\n\n( " + ele.value +" )";
   
   if ( dele.FullYear() != an )
-    return "Le format de la date est incorrect\n\nAnnÃ©e incorrecte :" + an + "\n\n( " + ele.value +" )";
+    return "Le format de la date est incorrect\n\nAnnée incorrecte :" + an + "\n\n( " + ele.value +" )";
 }
 
 function checkDateMobile(dateHtml5, dateHidden, numRange) {
@@ -690,9 +690,9 @@ function checkDateMobile(dateHtml5, dateHidden, numRange) {
 
 /*
   CheckDateAlert( ele, strDelay, obl )
-  Test de la validitÃ© d'une date
+  Test de la validité d'une date
   ele.value la chaine saisie
-  strDelay delai max autorisÃ©
+  strDelay delai max autorisé
   obl autorise les saisies vides
   retourne une chaine, ou un boolean avec Alert()
 */
@@ -726,14 +726,14 @@ function CheckDateCouple( eleStart, eleEnd, strDelay, nowOk, mdate )
 	  if ((mdate)&&(mdate!=""))
 	  { alert(mdate); eleStart.focus(); return false;}
 	else
-	  { alert("La date d'opÃ©ration de dÃ©but est plus grande ou Ã©gale Ã  la date d'opÃ©ration de fin."); eleStart.focus(); return false;}
+	  { alert("La date d'opération de début est plus grande ou égale à la date d'opération de fin."); eleStart.focus(); return false;}
   }
   return true;
 }
 
 /*
  * CheckIBAN(NumCompte)
- * Verifier la saisie d'un compte IBAN en recalculant la clÃ© IBAN.
+ * Verifier la saisie d'un compte IBAN en recalculant la clé IBAN.
 */
 function CheckIBAN(NumCompte)
 {
@@ -770,7 +770,7 @@ function CheckIBAN(NumCompte)
 
 /*
  * KeyIBAN(NumCompte,CodePays)
- * Calcul la clÃ© IBAN Ã  partir du BBAN et du code pays du BBAN.
+ * Calcul la clé IBAN à partir du BBAN et du code pays du BBAN.
  */
 function KeyIBAN(NumCompte, CodePays)
 {
@@ -851,7 +851,7 @@ var min,max,val = ele.value;
   if ( val == "" )
   {
 	if ( obl )
-	  return "Valeur entiÃ¨re obligatoire";
+	  return "Valeur entière obligatoire";
 	else
 	  return "";
   }
@@ -868,7 +868,7 @@ var min,max,val = ele.value;
 	if ( max == 0 )
 	{
 	  if ( ival < 0 )
-		return "Le nombre ne peut pas Ãªtre nÃ©gatif\n\n( " + ele.value +" )";
+		return "Le nombre ne peut pas être négatif\n\n( " + ele.value +" )";
 	  return "";
 	}
 	if ( max > 0 )
@@ -879,16 +879,16 @@ var min,max,val = ele.value;
 	  max = 0;
 	}
 	if ( ival <= min || ival >= max )
-	  return "Le nombre n'est pas dans l'intervalle" + " [" + (min+1) + " Ã  " + (max-1) + "]\n\n( " + val +" )";
+	  return "Le nombre n'est pas dans l'intervalle" + " [" + (min+1) + " à " + (max-1) + "]\n\n( " + val +" )";
   }
   return "";
 }
 
 /*
   CheckIntAlert( ele, strInt, obl )
-  Test de la validitÃ© d'un entier
+  Test de la validité d'un entier
   ele.value la chaine saisie
-  strInt valeur max autorisÃ©
+  strInt valeur max autorisé
   obl autorise les saisies vides
   retourne une chaine, ou un boolean avec Alert()
 */
@@ -1028,7 +1028,7 @@ function TextTranslate( ele, strin, strout )
 
 /*
  * pad_right(val,len)
- * Complete une chaine Ã  droite avec des espaces
+ * Complete une chaine à droite avec des espaces
  */
 function pad_right( val, len )
 {
@@ -1059,18 +1059,18 @@ var hh, pp, mm;
 	return "L'heure doit avoir le format HH:MM" + "\n\n( " + ele.value +" )";
 
   if ( hh < 0 || hh > 23 || hh == "  " )
-	return "L'heure doit Ãªtre un nombre compris entre 00 et 23" + "\n\n( " + ele.value +" )";
+	return "L'heure doit être un nombre compris entre 00 et 23" + "\n\n( " + ele.value +" )";
   if ( mm < 0 || mm > 59 || mm == "  " )
-	return "Le nombre de minutes doit Ãªtre compris entre 00 et 59" + "\n\n( " + ele.value +" )";
+	return "Le nombre de minutes doit être compris entre 00 et 59" + "\n\n( " + ele.value +" )";
 
   return "";
 }
 
 /*
   CheckTimeAlert( ele, strDelay, obl )
-  Test de la validitÃ© d'une heure
+  Test de la validité d'une heure
   ele.value la chaine saisie
-  strDelai delai max autorisÃ©
+  strDelai delai max autorisé
   obl autorise les saisies vides
   retourne une chaine, ou un boolean avec Alert()
 */
@@ -1091,7 +1091,7 @@ var str;
 
 /*
   CheckEmail( adresse )
-  Test la validitÃ© d'une adresse email
+  Test la validité d'une adresse email
 */
 function CheckEmail( adresse )
 {
@@ -1109,7 +1109,7 @@ function CheckEmail( adresse )
 
 
 /*
- * remplacement de la fonctionnalitÃ© alt par AffBulle, pour fonctionnement IE,Mozilla
+ * remplacement de la fonctionnalité alt par AffBulle, pour fonctionnement IE,Mozilla
  */
 var posX=0;
 posY=0;
@@ -1185,7 +1185,7 @@ function HideBulle()
 function random() { return Math.floor(Math.random()*10); }
 
 /*
- * Affichage du tableau de saisie du code Ã  la souris
+ * Affichage du tableau de saisie du code à la souris
  */
 function gen_clavier(formulaire,zone)
 {
@@ -1250,19 +1250,19 @@ function check_nbdec(ele, nbdec)
   dec="";
   arr = ele.value.split(",");
   if ( arr.length > 2 )
-  {  alert(hlp+"SÃ©parateur dÃ©cimal incorrect" + "\n\n( " + ele.value + " )");
+  {  alert(hlp+"Séparateur décimal incorrect" + "\n\n( " + ele.value + " )");
     return false;
   }
   if ( arr.length == 2 )
   {
     dec=arr[1];
     if(dec.length > nbdec)
-      alert(TextFormat("Le nombre de dÃ©cimales saisie ne doit pas Ãªtre supÃ©rieur Ã  %1",nbdec));
+      alert(TextFormat("Le nombre de décimales saisie ne doit pas être supérieur à %1",nbdec));
   }
 }
 
 /*
-  formatte une chaine reprÃ©sentant un valeur numÃ©rique non formatÃ©e
+  formatte une chaine représentant un valeur numérique non formatée
 */
 function FormatMonnaie(S, isDec)
 {
@@ -1314,7 +1314,7 @@ function FormatMonnaie(S, isDec)
 }
 
 /*
-  formatte une chaine reprÃ©sentant un valeur numÃ©rique non formatÃ©e
+  formatte une chaine représentant un valeur numérique non formatée
 */
 function FormatMonnaie(S, isDec)
 {
@@ -1411,7 +1411,7 @@ function FormatChecked(object)
 }
 
 
-//CrÃ©ation de l'objet XMLHttpRequest en fonction du navigateur
+//Création de l'objet XMLHttpRequest en fonction du navigateur
 function createXmlHttpRequest(){
 	var req = null;
 	if (window.XMLHttpRequest) {
@@ -1422,7 +1422,7 @@ function createXmlHttpRequest(){
 	req.onreadystatechange = function(){
 		if (req.readyState == 4){
 			if (req.status == 200){
-				//Cette fonction devra etre dÃ©fini dans chaque page lors de l'appel de la requete
+				//Cette fonction devra etre défini dans chaque page lors de l'appel de la requete
 				ReadXmlHttpRequest(req);
 			}
 			else{
@@ -1446,7 +1446,7 @@ function createXmlHttpRequest(){
 	return req;
 }
 
-//supprime les zero Ã  droite de la partie dÃ©cimale, et ecrit dans la page
+//supprime les zero à droite de la partie décimale, et ecrit dans la page
 function supZero(val)
 {
   var arr, dec, len, NbZero;
@@ -1478,7 +1478,7 @@ function logout()
   {
     
     if ( confirm( "Quitter l'application ?" ) )
-      window.open("dciweb.htm?p0=logoutgo.tht&p1=logout2.html&amp;p2=SECU&t=x","_top");
+      window.open("dciweb8ae7.html?p0=logoutgo.tht&amp;p1=logout2.html&amp;p2=SECU&amp;t=x","_top");
     
   }
 
@@ -1487,7 +1487,7 @@ function logout()
  */
 function openPopup() {
     // remplacement frame "droite"
-    top.droite.location.replace("dciweb.htm?p0=ssosvc.tht&partenaire=print&key=index");
+    top.droite.location.replace("dciweb941f.html?p0=ssosvc.tht&amp;partenaire=print&amp;key=index");
     
     // open popup "print"
     window.open('','print','location=0,directories=0,status=1,menubar=0,scrollbars=1,resizable=1,width=1200,height=600,left=20,top=20');
@@ -1513,7 +1513,7 @@ function CheckEndDateAFB160(endAfb160, ele)
   endDate = an + "" + mo + "" + jj;
   
   if ((endAfb160 - endDate) <= 0) {
-    alert("Les virements domestiques ne seront plus possibles Ã  partir du 1er aoÃ»t 2014.\nNous vous invitons Ã  saisir une date d'exÃ©cution infÃ©rieure ou Ã  rÃ©aliser un virement SEPA.");
+    alert("Les virements domestiques ne seront plus possibles à partir du 1er août 2014.\nNous vous invitons à saisir une date d'exécution inférieure ou à réaliser un virement SEPA.");
     return false;
   }
   
@@ -1576,7 +1576,7 @@ function closeReveal() {
 }
 
 /*
- * Permet de crÃ©er un Ã©lÃ©ment de type input pour savoir si le browser le supporte
+ * Permet de créer un élément de type input pour savoir si le browser le supporte
  * Ex : isInputTypeSupported("text")    - true html std
  *      isInputTypeSupported("number")  - true html 5
  *      isInputTypeSupported("xxxx")    - false
@@ -1602,7 +1602,7 @@ function isInputTypeSupported(typeName) {
 }
 
 /*
- * Permet de crÃ©er un Ã©lÃ©ment avec un attribut spÃ©cifique pour savoir si le browser le supporte
+ * Permet de créer un élément avec un attribut spécifique pour savoir si le browser le supporte
  * Ex : isAttributeSupported("input", "type")         - true html std
  *      isAttributeSupported("input", "placeholder")  - true html 5
  *      isAttributeSupported("input", "xxxx")         - false

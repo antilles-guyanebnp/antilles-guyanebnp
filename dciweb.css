@@ -61,7 +61,7 @@
 .warning{ font-family:ARIAL; font-size:110%; color:#000000; font-weight: bold; text-align: center}
 .erreur{ font-family:ARIAL; font-size:110%; color:#FF0000; font-weight: bold; text-align: center}
 
-/* Completement pour services de sites partenaires intÃ©grÃ©s par SSO  */
+/* Completement pour services de sites partenaires intégrés par SSO  */
 .ssoindis{}
 .ssohelp{}
 

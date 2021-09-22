@@ -59,12 +59,12 @@ a {
 .menu ul li {
 	margin: 5px 0 5px 15px;
 	padding: 0 0 0 0px;
-	list-style-image: url('images/flecheBleue.png');
+	list-style-image: url('images/flecheBleue.html');
 	color: #434343;
 	font-weight: normal;
 }
 .menu ul li.select {
-	list-style-image: url('images/flecheRouge.png');
+	list-style-image: url('images/flecheRouge.html');
 	color: #A6394C;
 	font-weight: bold;
 }
